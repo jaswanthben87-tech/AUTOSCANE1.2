@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Ask Gemini AutoScan",
+  "version": "1.2.0",
+  "description": "Scan visible questions locally with OCR and show Gemini answers on the same webpage.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Scan visible questions with Ask Gemini AutoScan"
+  },
+  "commands": {
+    "scan-question": {
+      "suggested_key": {
+        "default": "Alt+X"
+      },
+      "description": "Scan the visible webpage with Ask Gemini AutoScan"
+    },
+    "toggle-visibility": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Q"
+      },
+      "description": "Toggle question and multiple-choice option visibility"
+    }
+  },
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
