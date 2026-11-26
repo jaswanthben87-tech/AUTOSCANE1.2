@@ -116,7 +116,7 @@ scanBtn.addEventListener("click", async () => {
     );
     const image = crop.toDataURL("image/png");
     const stored = await chrome.storage.local.get(["serverUrl"]).catch(() => ({}));
-    const serverUrl = (stored?.serverUrl || "https://scan-lime.vercel.app").replace(/\/+$/, "");
+    const serverUrl = (stored?.serverUrl || "https://server-m6e9.vercel.app").replace(/\/+$/, "");
     const response = await fetch(`${serverUrl}/api/scan`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

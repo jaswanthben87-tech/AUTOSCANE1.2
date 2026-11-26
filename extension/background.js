@@ -1,4 +1,4 @@
-const DEFAULT_SERVER = "https://scan-lime.vercel.app";
+const DEFAULT_SERVER = "https://server-m6e9.vercel.app";
 const runningTabs = new Set();
 
 function normalizeServerUrl(raw) {
