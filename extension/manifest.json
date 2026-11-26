@@ -23,10 +23,7 @@
       "description": "Scan the visible webpage with Ask Gemini AutoScan"
     },
     "toggle-visibility": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+Q"
-      },
-      "description": "Toggle question and multiple-choice option visibility"
+      "description": "Toggle question and multiple-choice option visibility (use Ctrl+/ once panel is open)"
     }
   },
   "host_permissions": [

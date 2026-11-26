@@ -152,7 +152,7 @@
     }
   }
 
-  // Ctrl+Shift+Q hides/shows only the extension's own host element.
+  // Ctrl+/ hides/shows only the extension's own host element.
   // It never changes visibility or styles of the webpage or its MCQ content.
   function togglePanelVisibility() {
     if (!host?.isConnected) {
@@ -163,6 +163,14 @@
     panelHidden = !panelHidden;
     host.style.display = panelHidden ? "none" : "block";
   }
+
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && !e.altKey && !e.shiftKey && !e.metaKey && (e.key === "/" || e.code === "Slash")) {
+      e.preventDefault();
+      e.stopPropagation();
+      togglePanelVisibility();
+    }
+  }, true);
 
   function setStatus(s, loading=false) { ensurePanel(); $("#status").textContent=s; $("#dot").classList.toggle("spin",loading); $("#err").classList.add("hidden"); $("#retry").classList.add("hidden"); }
   function showError(message) { ensurePanel(); panelHidden=false; host.style.display="block"; busy=false; $("#status").textContent="Scan failed"; $("#dot").classList.remove("spin"); $("#err").textContent=message; $("#err").classList.remove("hidden"); $("#retry").classList.remove("hidden"); $("#again").disabled=false; }

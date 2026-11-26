@@ -58,7 +58,7 @@ Upgrade of the existing Ask Gemini Screen Scanner. The keyboard shortcut `Ctrl+S
 ## Keyboard shortcuts (v1.2.0)
 
 - **Alt + X**: Start scanning the visible webpage and request Gemini analysis.
-- **Ctrl + Shift + Q**: Toggle detected question and multiple-choice option visibility (hide/show). This shortcut does not start a scan.
+- **Ctrl + /**: Toggle AutoScan panel visibility (hide/show) once opened on the page. This shortcut does not start a scan.
 
 ## Deploy backend to Vercel
 
